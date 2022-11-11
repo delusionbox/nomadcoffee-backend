@@ -16,7 +16,7 @@ const resolverFn = async (_, {
     let avataruserURL = null
     if (avatarURL) {
         const { filename, createReadStream } = await avatarURL;
-        const newFilename = `${loggedInUser.id}-${Date.now()}-${filename}`
+        const newFilename = `${loggedInUser.id}-${Date.now()}-${filename}`;
         const readStream = createReadStream();
         const writeStream = createWriteStream(process.cwd() + "/uploads/" + newFilename);
 
@@ -40,7 +40,7 @@ const resolverFn = async (_, {
             githubUsername,
             ...(uglyPassword && { password: uglyPassword }),
             ...(avataruserURL && { avatarURL: avataruserURL }),
-        }
+        },
     });
     if (updateUser.id) {
         return {
