@@ -11,21 +11,9 @@ export default gql`
         githubUsername: String
         createdAt: String!
         updatedAt: String!
+    }
+    type MutationResponse {
         ok: Boolean!
         error: String!
-    }
-    type Mutation {
-        createAccount(
-            username: String!
-            email: String!
-            name: String!
-            location: String
-            password: String!
-            avatarURL: String
-            githubUsername: String
-        ): User
-    }
-    type Query{
-        seeProfile(username: String!): User
     }
 `;
